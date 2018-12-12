@@ -36,7 +36,7 @@ public class JedisUtil {
      */
     public Jedis getJedis() {
         if (jedisPool == null) {
-            throw new NullPointerException();
+            jedisPool = new JedisPool();
         }
         return jedisPool.getResource();
     }

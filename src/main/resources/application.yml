@@ -1,0 +1,10 @@
+redis:
+   pool:
+      host: 127.0.0.1
+      port: 6379
+      timeout: 6000
+      config:
+        maxActive: 300
+        maxIdle: 150
+        maxWaitMillis : 300
+        maxTotal: 100
