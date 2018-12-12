@@ -1,8 +1,14 @@
 package com.util.myutil.mvc.controller;
 
+import com.util.myutil.jedisUtil.JedisUtil;
+import com.util.myutil.jedisUtil.ObjectTranscoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import redis.clients.jedis.Jedis;
+
+import java.util.List;
 
 /**
  * @ClassName TestController
@@ -20,5 +26,11 @@ public class TestController {
         return "hello world!";
     }
 
+
+    @RequestMapping("jedisTest")
+    public String jedisTest(){
+        JedisUtil jedisUtil = new JedisUtil();
+        return jedisUtil.get("name");
+    }
 
 }
