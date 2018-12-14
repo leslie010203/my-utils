@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
  * @Description:
  */
 public class ThreadTest {
-    public synchronized void handleList(LinkedList<String> data,int threadNum) throws InterruptedException {
+        public synchronized void handleList(LinkedList<String> data,int threadNum) throws InterruptedException {
             //获得list长度
             int length = data.size();
             int tl = length % threadNum == 0?length / threadNum : (length / threadNum + 1);
